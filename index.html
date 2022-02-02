@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="./resources/ol.css">
+        <link rel="stylesheet" href="resources/fontawesome-all.min.css">
+        <link rel="stylesheet" href="./resources/ol-layerswitcher.css">
+        <link rel="stylesheet" href="./resources/qgis2web.css">
+<style>
+.search-layer {
+  top: 100px;
+  left: .5em;
+}
+.ol-touch .search-layer {
+  top: 130px;
+}
+</style>
+        <style>
+        html, body {
+            background-color: #ffffff;
+        }
+        .ol-control button {
+            background-color: #f8f8f8 !important;
+            color: #000000 !important;
+            border-radius: 0px !important;
+        }
+        .ol-zoom, .geolocate, .gcd-gl-control .ol-control {
+            background-color: rgba(255,255,255,.4) !important;
+            padding: 3px !important;
+        }
+        .ol-scale-line {
+            background: none !important;
+        }
+        .ol-scale-line-inner {
+            border: 2px solid #f8f8f8 !important;
+            border-top: none !important;
+            background: rgba(255, 255, 255, 0.5) !important;
+            color: black !important;
+        }
+        </style>
+<style>
+.tooltip {
+  position: relative;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  color: white;
+  padding: 4px 8px;
+  opacity: 0.7;
+  white-space: nowrap;
+}
+.tooltip-measure {
+  opacity: 1;
+  font-weight: bold;
+}
+.tooltip-static {
+  background-color: #ffcc33;
+  color: black;
+  border: 1px solid white;
+}
+.tooltip-measure:before,
+.tooltip-static:before {
+  border-top: 6px solid rgba(0, 0, 0, 0.5);
+  border-right: 6px solid transparent;
+  border-left: 6px solid transparent;
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  margin-left: -7px;
+  left: 50%;
+}
+.tooltip-static:before {
+  border-top-color: #ffcc33;
+}
+.measure-control {
+  top: 65px;
+  left: .5em;
+}
+.ol-touch .measure-control {
+  top: 80px;
+}
+</style>
+        <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        </style>
+        <title></title>
+    </head>
+    <body>
+        <div id="map">
+            <div id="popup" class="ol-popup">
+                <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+                <div id="popup-content"></div>
+            </div>
+        </div>
+        <script src="resources/qgis2web_expressions.js"></script>
+        <script src="resources/polyfills.js"></script>
+        <script src="./resources/functions.js"></script>
+        <script src="./resources/ol.js"></script>
+        <script src="./resources/ol-layerswitcher.js"></script>
+        <script src="layers/Drave_4.js"></script><script src="layers/Obstojeeproge_5.js"></script><script src="layers/Obstojeepostaje_6.js"></script><script src="layers/2_DivaaKoper_7.js"></script><script src="layers/03_Kulturna_dediscina_8.js"></script><script src="layers/04_Natura_2000_D96_9.js"></script><script src="layers/14_VVO_dravni_nivo_10.js"></script><script src="layers/15_VVO_obcinski_nivo_11.js"></script><script src="layers/8_LVVariantaDPredorZalogBrezovica_12.js"></script><script src="layers/8_LVVariantaCOptimiziranipredoriLV4_13.js"></script><script src="layers/8_LVVariantaBVzhodnojunaobvoznica_14.js"></script><script src="layers/8_LVVariantaASevernozahodnaobvoznica_15.js"></script><script src="layers/1_GrobelnoPragerskoVariantaD_16.js"></script><script src="layers/PIKresniceZagorje_17.js"></script><script src="layers/PIZagorjeCelje_18.js"></script><script src="layers/R2_Dolenjskaproga_19.js"></script><script src="layers/R2_DomaleKranjZlatoPolje_20.js"></script><script src="layers/R2_MosteDomale_21.js"></script><script src="layers/R2_Zahodnaobvoznaproga_22.js"></script><script src="layers/VZP_LjubljanaZidaniMost_23.js"></script><script src="layers/LjubljanaDivaa_24.js"></script><script src="layers/2_DivaaTrstVariantaC_25.js"></script><script src="layers/10_TrstKoperPiranVariantaB1_26.js"></script><script src="layers/10_TrstKoperPiranVariantaA_27.js"></script><script src="layers/Divaa_Tri_28.js"></script><script src="layers/12_MariborMurskaSobotaVariantaA_29.js"></script><script src="layers/11_MariborZagreb_30.js"></script><script src="layers/9_LesceBledJezeroVariantaA_31.js"></script><script src="layers/7_BeltinciLendava_32.js"></script><script src="layers/6_NovomestoDobova_33.js"></script><script src="layers/5_VelenjeDravograd_34.js"></script><script src="layers/3_LjubljanaAjdovinaGoricaVariantaB_35.js"></script><script src="layers/2_LjubljanaDivaavariantaA_36.js"></script><script src="layers/1_empeterPragerskovariantaE_37.js"></script><script src="layers/1_CeljepostajaVariantaF_38.js"></script><script src="layers/1_LevecCeljeVariantaF_39.js"></script><script src="layers/1_LjubljanaCeljeVariantaA1_40.js"></script><script src="layers/1_ZagorjeempeterVariantaC2_41.js"></script><script src="layers/Fraport_proge_42.js"></script><script src="layers/Gorenjska_43.js"></script>
+        <script src="styles/Drave_4_style.js"></script><script src="styles/Obstojeeproge_5_style.js"></script><script src="styles/Obstojeepostaje_6_style.js"></script><script src="styles/2_DivaaKoper_7_style.js"></script><script src="styles/03_Kulturna_dediscina_8_style.js"></script><script src="styles/04_Natura_2000_D96_9_style.js"></script><script src="styles/14_VVO_dravni_nivo_10_style.js"></script><script src="styles/15_VVO_obcinski_nivo_11_style.js"></script><script src="styles/8_LVVariantaDPredorZalogBrezovica_12_style.js"></script><script src="styles/8_LVVariantaCOptimiziranipredoriLV4_13_style.js"></script><script src="styles/8_LVVariantaBVzhodnojunaobvoznica_14_style.js"></script><script src="styles/8_LVVariantaASevernozahodnaobvoznica_15_style.js"></script><script src="styles/1_GrobelnoPragerskoVariantaD_16_style.js"></script><script src="styles/PIKresniceZagorje_17_style.js"></script><script src="styles/PIZagorjeCelje_18_style.js"></script><script src="styles/R2_Dolenjskaproga_19_style.js"></script><script src="styles/R2_DomaleKranjZlatoPolje_20_style.js"></script><script src="styles/R2_MosteDomale_21_style.js"></script><script src="styles/R2_Zahodnaobvoznaproga_22_style.js"></script><script src="styles/VZP_LjubljanaZidaniMost_23_style.js"></script><script src="styles/LjubljanaDivaa_24_style.js"></script><script src="styles/2_DivaaTrstVariantaC_25_style.js"></script><script src="styles/10_TrstKoperPiranVariantaB1_26_style.js"></script><script src="styles/10_TrstKoperPiranVariantaA_27_style.js"></script><script src="styles/Divaa_Tri_28_style.js"></script><script src="styles/12_MariborMurskaSobotaVariantaA_29_style.js"></script><script src="styles/11_MariborZagreb_30_style.js"></script><script src="styles/9_LesceBledJezeroVariantaA_31_style.js"></script><script src="styles/7_BeltinciLendava_32_style.js"></script><script src="styles/6_NovomestoDobova_33_style.js"></script><script src="styles/5_VelenjeDravograd_34_style.js"></script><script src="styles/3_LjubljanaAjdovinaGoricaVariantaB_35_style.js"></script><script src="styles/2_LjubljanaDivaavariantaA_36_style.js"></script><script src="styles/1_empeterPragerskovariantaE_37_style.js"></script><script src="styles/1_CeljepostajaVariantaF_38_style.js"></script><script src="styles/1_LevecCeljeVariantaF_39_style.js"></script><script src="styles/1_LjubljanaCeljeVariantaA1_40_style.js"></script><script src="styles/1_ZagorjeempeterVariantaC2_41_style.js"></script><script src="styles/Fraport_proge_42_style.js"></script><script src="styles/Gorenjska_43_style.js"></script>
+        <script src="./layers/layers.js" type="text/javascript"></script> 
+        <script src="./resources/Autolinker.min.js"></script>
+        <script src="./resources/qgis2web.js"></script>
+    </body>
+</html>
