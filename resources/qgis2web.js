@@ -69,7 +69,7 @@ var map = new ol.Map({
     overlays: [overlayPopup],
     layers: layersList,
     view: new ol.View({
-         maxZoom: 28, minZoom: 1
+        extent: [1481726.101005, 5665512.551150, 1844732.422076, 5922844.167482], maxZoom: 28, minZoom: 1
     })
 });
 
